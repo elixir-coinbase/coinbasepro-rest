@@ -73,13 +73,21 @@ defmodule Coinbase.Pro.REST do
 
   ## Usage
 
-  In order to issue GET request
   ```elixir
   alias Coinbase.Pro.REST.{Context,Request}
   # Obtain these values from Coinbase
   context = %Context{key: "...", secret: "...", passphrase: "..."}
 
   {:ok, response} = Request.get(context, "/orders?limit=10")
+  ```
+
+  In order to issue POST request:
+
+  ```elixir
+  alias Coinbase.Pro.REST.{Context,Request}
+  # Obtain these values from Coinbase
+  context = %Context{key: "...", secret: "...", passphrase: "..."}
+
   {:ok, response} = Request.post(context, "/deposits/payment-method", %{
     "amount": 10.00,
     "currency": "USD",
