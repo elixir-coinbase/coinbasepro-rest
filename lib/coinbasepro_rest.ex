@@ -10,7 +10,20 @@ defmodule Coinbase.Pro.REST do
   If you want to use a high-level API, see
   [elixir-coinbase/coinbasepro](https://github.com/elixir-coinbase/coinbasepro).
 
-  ## Dependencies
+  ## Installation
+
+  If [available in Hex](https://hex.pm/docs/publish), the package can be installed
+  by adding `coinbasepro_rest` to your list of dependencies in `mix.exs`:
+
+  ```elixir
+  def deps do
+    [
+      {:coinbasepro_rest, "~> 1.0"}
+    ]
+  end
+  ```
+
+  ## Additional dependencies
 
   As it uses [Tesla](https://github.com/teamon/tesla) underneath, you
   have to follow its installation instructions. Specifically, you have to
@@ -68,6 +81,12 @@ defmodule Coinbase.Pro.REST do
   context = %Context{key: "...", secret: "...", passphrase: "..."}
   {:ok, response} = Request.get(context, "/orders?limit=10")
   ```
+
+  ## Documentation
+
+  The docs can be found at
+  [https://hexdocs.pm/coinbasepro_rest](https://hexdocs.pm/coinbasepro_rest).
+
 
   ## License
 
