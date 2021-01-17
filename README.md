@@ -82,7 +82,13 @@ In order to issue GET request
 alias Coinbase.Pro.REST.{Context,Request}
 # Obtain these values from Coinbase
 context = %Context{key: "...", secret: "...", passphrase: "..."}
+
 {:ok, response} = Request.get(context, "/orders?limit=10")
+{:ok, response} = Request.post(context, "/deposits/payment-method", %{
+  "amount": 10.00,
+  "currency": "USD",
+  "payment_method_id": "bc677162-d934-5f1a-968c-a496b1c1270b"
+})
 ```
 
 ## Documentation
