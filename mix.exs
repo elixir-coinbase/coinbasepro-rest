@@ -7,7 +7,11 @@ defmodule Coinbase.Pro.REST.MixProject do
       version: "1.0.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+
+      description: description(),
+      deps: deps(),
+      package: package(),
+      source_url: "https://github.com/elixir-coinbase/coinbasepro_rest",
     ]
   end
 
@@ -20,6 +24,18 @@ defmodule Coinbase.Pro.REST.MixProject do
   defp deps do
     [
       {:tesla, "~> 1.4"}
+    ]
+  end
+
+  defp description do
+    "Low-level implementation of the Coinbase Pro REST API."
+  end
+
+  defp package do
+    [
+      maintainers: ["Marcin Lewandowski"],
+      licenses: ["MIT"],
+      links: %{"GitHub" => "https://github.com/elixir-coinbase/coinbasepro_rest"}
     ]
   end
 end
