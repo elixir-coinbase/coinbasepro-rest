@@ -23,7 +23,8 @@ defmodule Coinbase.Pro.REST.MixProject do
 
   defp deps do
     [
-      {:tesla, "~> 1.4"}
+      {:tesla, "~> 1.4"},
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
     ]
   end
 
