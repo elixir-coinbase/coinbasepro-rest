@@ -6,7 +6,7 @@
 
 This package implements a low-level REST API of the
 [Coinbase Pro](https://docs.pro.coinbase.com/).
-Low-level means t is just a wrapper over HTTP library which handles
+Low-level means it is just a wrapper over HTTP library which handles
 authentication, request signing and has a few nice helper functions
 but you still have to construct URLs and interpret responses on
 your own.
