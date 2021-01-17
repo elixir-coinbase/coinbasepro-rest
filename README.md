@@ -39,7 +39,6 @@ For example, add Jason and Hackney to the dependencies in `mix.exs`:
 ```elixir
 defp deps do
   [
-    {:coinbasepro_rest, "~> 1.0"},
     {:hackney, "~> 1.16.0"},
     {:jason, ">= 1.0.0"}
   ]
