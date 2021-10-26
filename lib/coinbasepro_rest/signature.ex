@@ -38,7 +38,7 @@ defmodule Coinbase.Pro.REST.Signature do
       |> DateTime.to_unix()
 
     what = "#{timestamp}#{method}#{path}#{body}"
-    signature = :crypto.hmac(:sha256, Base.decode64!(context.secret), what) |> Base.encode64()
+    signature = :crypto.mac(:hmac, :sha256, Base.decode64!(context.secret), what) |> Base.encode64()
 
     [
       {"CB-ACCESS-KEY", context.key},
