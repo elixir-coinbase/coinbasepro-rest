@@ -118,6 +118,16 @@ defmodule Coinbase.Pro.REST.Request do
     |> make_response()
   end
 
+  @spec post(Context.t(), Tesla.Env.url(), [Tesla.option()]) ::
+    {:ok, Response.t()}
+    | {:error, {:http, any}}
+    | {:error, {:code, pos_integer, any}}
+  def delete(context, path, body, opts \\ []) do
+  client(context)
+  |> Tesla.delete(path, body, opts)
+  |> make_response()
+  end
+
   defp make_response(response) do
     case response do
       {:ok, %Tesla.Env{status: 200, body: body, headers: headers}} ->
