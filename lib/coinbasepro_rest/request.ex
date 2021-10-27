@@ -122,9 +122,9 @@ defmodule Coinbase.Pro.REST.Request do
     {:ok, Response.t()}
     | {:error, {:http, any}}
     | {:error, {:code, pos_integer, any}}
-  def delete(context, path, body, opts \\ []) do
+  def delete(context, path, body) do
   client(context)
-  |> Tesla.delete(path, body, opts)
+  |> Tesla.delete(path, body)
   |> make_response()
   end
 
